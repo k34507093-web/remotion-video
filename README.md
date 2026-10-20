@@ -1,54 +1,44 @@
-# Remotion video
+# 苏晓·触土入梦 — Remotion 完整项目
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+20秒 / 1920×1080 / 30fps / H.264 MP4。
+动态分镜、中文字幕、低频氛围、心跳、耳鸣与幻境破碎效果。无人物配音。
 
-Welcome to your Remotion project!
+## 本地运行
 
-## Commands
+1. 安装 Node.js 24 LTS（https://nodejs.org/）。
+2. 解压整个文件夹，保留 src 和 public 的目录结构。
+3. 在本目录打开终端，执行：
 
-**Install Dependencies**
-
-```console
-npm i --loglevel=error
-```
-
-**Start Preview**
-
-```console
+```sh
+npm ci
 npm run dev
 ```
 
-**Render video**
+在 Studio 中选择 SuXiao-Vision；Scenes 文件夹包含各分镜独立时间线。
 
-```console
-npx remotion render
+## 导出 MP4
+
+在本目录执行：
+
+```sh
+npx remotion render src/index.ts SuXiao-Vision out/suxiao-vision.mp4 --concurrency=2
 ```
 
-**Upgrade Remotion**
+生成文件位于 out/suxiao-vision.mp4。
+首次导出需要联网，让 Remotion 自动准备浏览器。
+如果浏览器下载受限，可追加 --browser-executable 参数并填入本机实际 Chrome 路径。
+不要使用云端的 /usr/bin/chromium 路径，除非本机恰好有该可执行文件。
 
-```console
-npx remotion upgrade
+## 素材与字体
+
+public/storyboard.png：3列×2行的完整六宫格画面，程序按格选取，不需要手动裁图。
+public/atmosphere.wav：完整20秒音效，已包含，无需 Python。
+字体使用 Noto Sans CJK SC 和 Noto Serif CJK SC；安装后可匹配云端字体，未安装时由系统回退。
+
+## 检查
+
+```sh
+npm run lint
 ```
 
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+此包包含所有组件、依赖锁文件和静态素材；不包含 node_modules、Git元数据、环境变量或凭证。
