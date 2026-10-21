@@ -1,3 +1,5 @@
+import { DuskScene } from "./DuskScene";
+import { DuskShot } from "./DuskShot";
 import { Composition, Folder } from "remotion";
 import { MyComponent } from "./Composition";
 import { Reality } from "./Reality";
@@ -8,6 +10,43 @@ import { Breakdown } from "./Breakdown";
 import { Return } from "./Return";
 export const RemotionRoot = () => (
   <>
+    <Composition
+      id="SuXiao-Dusk"
+      component={DuskScene}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={300}
+    />
+    <Folder name="DuskShots">
+      <Composition
+        id="Dusk-Opening"
+        component={DuskShot}
+        width={1920}
+        height={1080}
+        fps={30}
+        durationInFrames={201}
+        defaultProps={{ panel: 0, length: 201, cropY: -150 }}
+      />
+      <Composition
+        id="Dusk-Bottle"
+        component={DuskShot}
+        width={1920}
+        height={1080}
+        fps={30}
+        durationInFrames={60}
+        defaultProps={{ panel: 1, length: 60, cropY: -640 }}
+      />
+      <Composition
+        id="Dusk-Retreat"
+        component={DuskShot}
+        width={1920}
+        height={1080}
+        fps={30}
+        durationInFrames={54}
+        defaultProps={{ panel: 2, length: 54, cropY: -270, pullBack: true }}
+      />
+    </Folder>
     <Composition
       id="SuXiao-Vision"
       component={MyComponent}

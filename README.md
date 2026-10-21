@@ -1,3 +1,20 @@
+# 新增：苏晓·黄昏遗址（10秒，含中文画外音）
+
+安装 Node.js 24，在项目目录执行 `npm ci`，再执行 `npm run dev`。
+在 Studio 中选择 **SuXiao-Dusk**。
+
+导出本段视频：
+
+```sh
+npx remotion render src/index.ts SuXiao-Dusk out/suxiao-dusk-10s.mp4 --concurrency=2
+```
+
+所有图片、旁白音频和环境音已包含在 public/dusk，无需额外配音服务或密钥。
+画面为写实动态分镜；中文合成画外音：“原来，无知不是借口。敬畏，才是底线。”
+旁白由本地 sherpa-onnx VITS 模型合成，使用官方预训练 vits-zh-hf-fanchen-C 模型；已渲染为 WAV 随项目提供，模型本身不包含在项目包中。
+
+---
+
 # 苏晓·触土入梦 — Remotion 完整项目
 
 20秒 / 1920×1080 / 30fps / H.264 MP4。
