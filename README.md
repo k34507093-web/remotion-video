@@ -1,3 +1,14 @@
+# 新增：40秒纯BGM片头（无配音）
+
+Studio 选择 `SuXiao-Prologue-BgmOnly`。
+音轨仅使用原创悬疑BGM，去除人声和旁白时的压低处理。
+
+```sh
+npx remotion render src/index.ts SuXiao-Prologue-BgmOnly out/suxiao-prologue-40s-bgm-only.mp4 --concurrency=2
+```
+
+---
+
 # 新增：40秒悬疑配乐版片头
 
 Studio 选择 `SuXiao-Prologue-Mystery`。低沉中文AI男声，分句停顿与结尾重音；加入本项目合成的原创悬疑氛围配乐，并在旁白时降低配乐音量。

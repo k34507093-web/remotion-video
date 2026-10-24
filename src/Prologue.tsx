@@ -90,7 +90,7 @@ export const Prologue = ({
           ))}
         </div>
       </AbsoluteFill>
-      <Audio name="片头旁白" src={staticFile(audioFile)} premountFor={fps} />
+      <Audio name="片头音轨" src={staticFile(audioFile)} premountFor={fps} />
       {musicFile ? (
         <Audio name="悬疑配乐" src={staticFile(musicFile)} premountFor={fps} />
       ) : null}

@@ -12,6 +12,15 @@ import { Return } from "./Return";
 export const RemotionRoot = () => (
   <>
     <Composition
+      id="SuXiao-Prologue-BgmOnly"
+      component={Prologue}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={1200}
+      defaultProps={{ audioFile: "prologue/music-only.wav" }}
+    />
+    <Composition
       id="SuXiao-Prologue-Mystery"
       component={Prologue}
       width={1920}
