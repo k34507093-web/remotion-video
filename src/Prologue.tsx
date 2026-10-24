@@ -33,8 +33,10 @@ export const prologueParagraphs = [
 
 export const Prologue = ({
   audioFile = "prologue/narration.wav",
+  musicFile,
 }: {
   audioFile?: string;
+  musicFile?: string;
 }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
@@ -88,7 +90,10 @@ export const Prologue = ({
           ))}
         </div>
       </AbsoluteFill>
-      <Audio src={staticFile(audioFile)} premountFor={fps} />
+      <Audio name="片头旁白" src={staticFile(audioFile)} premountFor={fps} />
+      {musicFile ? (
+        <Audio name="悬疑配乐" src={staticFile(musicFile)} premountFor={fps} />
+      ) : null}
       <AbsoluteFill
         style={{
           background: "#000",

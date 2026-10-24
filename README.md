@@ -1,3 +1,16 @@
+# 新增：40秒悬疑配乐版片头
+
+Studio 选择 `SuXiao-Prologue-Mystery`。低沉中文AI男声，分句停顿与结尾重音；加入本项目合成的原创悬疑氛围配乐，并在旁白时降低配乐音量。
+
+```sh
+npx remotion render src/index.ts SuXiao-Prologue-Mystery out/suxiao-prologue-40s-mystery.mp4 --concurrency=2
+```
+
+旁白和BGM分别保存为 public/prologue/narration-deep.wav、public/prologue/mystery-bgm.wav，可在Remotion中分别编辑。
+旁白使用 sherpa-onnx 官方发布的 vits-zh-hf-fanchen-ZhiHuiLaoZhe 预训练模型合成，并调整分句时长、EQ与动态。无需本地安装模型即可播放或重新导出。
+
+---
+
 # 新增：40秒片头版本
 
 完整原文、黑底白字、上滚字幕和放慢的中文配音。
