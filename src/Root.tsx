@@ -1,3 +1,4 @@
+import { Prologue } from "./Prologue";
 import { DuskScene } from "./DuskScene";
 import { DuskShot } from "./DuskShot";
 import { Composition, Folder } from "remotion";
@@ -10,6 +11,14 @@ import { Breakdown } from "./Breakdown";
 import { Return } from "./Return";
 export const RemotionRoot = () => (
   <>
+    <Composition
+      id="SuXiao-Prologue"
+      component={Prologue}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={594}
+    />
     <Composition
       id="SuXiao-Dusk"
       component={DuskScene}

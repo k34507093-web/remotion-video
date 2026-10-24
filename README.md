@@ -1,3 +1,17 @@
+# 新增：黑底白字片头（19.8秒，完整配音滚动文字）
+
+Studio 选择 `SuXiao-Prologue`。全文逐字保留；配音为快速朗读，声音经保持音调的时间压缩处理。
+
+本地导出：
+
+```sh
+npx remotion render src/index.ts SuXiao-Prologue out/suxiao-prologue-20s.mp4 --concurrency=2
+```
+
+全文位于 public/prologue/text.txt；成品配音已包含在 public/prologue/narration.wav，无需额外语音服务。
+
+---
+
 # 新增：苏晓·黄昏遗址（10秒，含中文画外音）
 
 安装 Node.js 24，在项目目录执行 `npm ci`，再执行 `npm run dev`。
