@@ -1,3 +1,17 @@
+# 新增：40秒片头版本
+
+完整原文、黑底白字、上滚字幕和放慢的中文配音。
+在 Studio 选择 `SuXiao-Prologue-40s`。
+
+```sh
+npx remotion render src/index.ts SuXiao-Prologue-40s out/suxiao-prologue-40s.mp4 --concurrency=2
+```
+
+配音使用原始合成语音重新调整到40秒版本，保留音调。
+之前的20秒版本仍可选择 `SuXiao-Prologue`。
+
+---
+
 # 新增：黑底白字片头（19.8秒，完整配音滚动文字）
 
 Studio 选择 `SuXiao-Prologue`。全文逐字保留；配音为快速朗读，声音经保持音调的时间压缩处理。

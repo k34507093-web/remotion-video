@@ -31,9 +31,13 @@ export const prologueParagraphs = [
   ["无知不是借口，敬畏才是底线。", "全民守国安，寸土不松懈。"],
 ];
 
-export const Prologue = () => {
+export const Prologue = ({
+  audioFile = "prologue/narration.wav",
+}: {
+  audioFile?: string;
+}) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const lineHeight = 86;
   const gap = 46;
   const height =
@@ -60,7 +64,7 @@ export const Prologue = () => {
             fontWeight: 400,
             letterSpacing: 2,
             lineHeight: `${lineHeight}px`,
-            translate: `0px ${interpolate(frame, [0, 19.3 * fps], [420, 600 - height], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}px`,
+            translate: `0px ${interpolate(frame, [0, durationInFrames - 0.5 * fps], [420, 600 - height], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}px`,
           }}
         >
           {prologueParagraphs.map((paragraph, index) => (
@@ -84,13 +88,18 @@ export const Prologue = () => {
           ))}
         </div>
       </AbsoluteFill>
-      <Audio src={staticFile("prologue/narration.wav")} premountFor={fps} />
+      <Audio src={staticFile(audioFile)} premountFor={fps} />
       <AbsoluteFill
         style={{
           background: "#000",
-          opacity: interpolate(frame, [0, 5, 589, 593], [0.6, 0, 0, 1], {
-            extrapolateRight: "clamp",
-          }),
+          opacity: interpolate(
+            frame,
+            [0, 5, durationInFrames - 5, durationInFrames - 1],
+            [0.6, 0, 0, 1],
+            {
+              extrapolateRight: "clamp",
+            },
+          ),
         }}
       />
     </AbsoluteFill>
